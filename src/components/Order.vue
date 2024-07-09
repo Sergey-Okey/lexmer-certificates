@@ -9,16 +9,14 @@
           <div class="gallery">
             <span class="title">
               <data value="1" style="color: grey">1.</data> Выберите
-              дизайн</span
-            >
+              дизайн</span>
             <ImageGallery />
           </div>
           <div class="form">
             <span class="title">
               <data value="2" style="color: grey">1.</data> Укажите
-              номинал</span
-            >
-				<OrderForm />
+              номинал</span>
+            <OrderForm />
           </div>
         </div>
       </div>
@@ -36,7 +34,10 @@ import OrderForm from "@/components/OrderForm.vue";
 .order {
   width: 100%;
   background-color: #edf0f2;
+
   &_content {
+    width: 1920px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,11 +50,12 @@ import OrderForm from "@/components/OrderForm.vue";
     padding: 55px 60px;
     display: flex;
     background-color: white;
+
     .content {
       display: flex;
       width: 100%;
       justify-content: space-between;
-		gap: 45px;
+      gap: 45px;
 
       .gallery {
         display: flex;

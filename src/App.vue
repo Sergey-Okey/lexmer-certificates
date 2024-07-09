@@ -1,10 +1,7 @@
-<script setup lang="ts">
-import Certificate from "./views/Certificate.vue";
-
-
-
+<script setup>
+import Certificate from "@/views/Certificate.vue";
 </script>
 
 <template>
-<Certificate />
+	<Certificate />
 </template>

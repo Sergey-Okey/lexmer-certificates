@@ -37,12 +37,12 @@ import Title from "./Title.vue";
 <style scoped lang="scss">
 .price {
   display: flex;
-  width: 100%;
   background: white;
   padding: 74px 142px;
 
   &_content {
-    width: 100%;
+    width: 1920px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -76,7 +76,7 @@ import Title from "./Title.vue";
 
         .up {
           font-family: "Bebas";
-          font-size: 42px;
+          font-size: 40px;
           font-weight: 400;
           line-height: 37.8px;
           letter-spacing: -0.01em;

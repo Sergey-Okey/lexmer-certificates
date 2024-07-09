@@ -12,5 +12,4 @@ import Order from "@/components/Order.vue";
 import PopularQuestions from "@/components/PopularQuestions.vue";
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

@@ -2,11 +2,7 @@
   <div class="popular-questions">
     <div class="popular-questions-container">
       <div class="title">
-        <Title
-          span1="вопросы"
-          span2="популярные"
-          style="flex-direction: column-reverse"
-        />
+        <Title span1="вопросы" span2="популярные" style="flex-direction: column-reverse" />
         <p>
           Не нашли ответ на свой вопрос? Узнайте подробнее
           <a href="">об условиях приобретения и использования</a>
@@ -15,25 +11,14 @@
       </div>
 
       <div class="questions">
-        <div
-          v-for="(question, index) in questions"
-          :key="index"
-          class="question"
-        >
+        <div v-for="(question, index) in questions" :key="index" class="question">
           <div class="question-header" @click="toggleQuestion(index)">
             <span class="question-title">{{ question.title }}</span>
-            <span
-              class="icon"
-              :class="{
-                'icon-expanded': question.expanded,
-                'icon-collapsed': !question.expanded,
-              }"
-            >
-              <svg
-                class="arrow-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
+            <span class="icon" :class="{
+              'icon-expanded': question.expanded,
+              'icon-collapsed': !question.expanded,
+            }">
+              <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M8 9l4 4 4-4" />
               </svg>
             </span>
@@ -88,12 +73,14 @@ const toggleQuestion = (index) => {
 
 <style lang="scss" scoped>
 .popular-questions {
-  padding: 100px 97px;
+  width: 100%;
 
   .popular-questions-container {
-    width: 100%;
+    width: 1920px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    padding: 100px;
 
     .title {
       display: flex;
@@ -117,23 +104,23 @@ const toggleQuestion = (index) => {
   .question {
     width: 100%;
     margin-bottom: 10px;
+    border: solid 1px #EBEBEB;
 
     .question-header {
       width: 1020px;
       height: 60px;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 17px 30px;
+      padding: 17px;
       cursor: pointer;
       font-size: 21px;
       font-weight: 400;
       line-height: 23.1px;
       text-align: left;
 
+
       .icon {
-        margin-left: auto;
         width: 40px;
         height: 40px;
         display: flex;
@@ -172,6 +159,7 @@ const toggleQuestion = (index) => {
 
       &.opened {
         max-height: 500px;
+        margin-bottom: 20px;
       }
     }
   }

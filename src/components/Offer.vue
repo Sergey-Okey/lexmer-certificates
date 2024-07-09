@@ -24,12 +24,12 @@ import Title from "./Title.vue";
 <style scoped lang="scss">
 .offer {
   display: flex;
-  width: 100%;
   background: #edf0f2;
-  padding: 74px 142px;
+  padding: 74px 100px;
 
   &_content {
-    width: 100%;
+    width: 1920px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -74,9 +74,7 @@ import Title from "./Title.vue";
       color: white;
       margin-top: 35px;
 
-      @include breakpoint('desktop') {
-
-      }
+      @include breakpoint('desktop') {}
     }
   }
 }
