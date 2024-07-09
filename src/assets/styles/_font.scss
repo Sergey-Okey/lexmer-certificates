@@ -1,0 +1,8 @@
+$fonts: (
+  'base': ('Bebas Neue', 'Helvetica', 'Arial', sans-serif),
+  'rawline': ('Rawline', sans-serif),
+);
+
+@mixin font($key: 'base') {
+  font-family: map-get($fonts, $key);
+}

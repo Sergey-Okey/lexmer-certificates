@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Bebas';
+  src: local('Bebas'),
+    url('./fonts/Bebas\ Neue.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Golos';
+  src: url('./fonts/GolosText-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+*,
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  font-family: 'Golos', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  margin: 0;
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s $easing;
+}
+
+a:hover {
+  color: color('link', 'hover');
+}
+
+button {
+  background: none;
+  border: none;
+  font-family: 'Golos', sans-serif;
+  outline: none;
+  padding: 0;
+}
+
+input {
+  font-family: 'Rawline', sans-serif;
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+img {
+  max-width: none !important;
+}
+
+
+#vue-app {
+  position: relative;
+  font-family: 'Rawline', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 0 20px 120px;
+  padding-top: 60px;
+  scroll-behavior: smooth;
+}
