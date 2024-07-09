@@ -8,20 +8,20 @@
         <div class="item">
           <span>Оформление сертификата</span>
           <span class="up">за 1 минуту</span>
-          <img class="bottom" src="./assets/images/price/clock.svg" alt="clock" />
+          <img class="bottom" src="../assets/images/price/clock.svg" alt="clock" />
         </div>
         <div class="item">
-          <img class="top" src="./assets/images/price/pay.svg" alt="pay" />
+          <img class="top" src="../assets/images/price/pay.svg" alt="pay" />
           <span>Гибкий выбор суммы</span>
           <span class="up">от 1 000 до 50 000 РУб.</span>
         </div>
         <div class="item">
           <span>Сертификат действует</span>
           <span class="up">бессрочно</span>
-          <img class="bottom" src="./assets/images/price/infinity.svg" alt="infinity" />
+          <img class="bottom" src="../assets/images/price/infinity.svg" alt="infinity" />
         </div>
         <div class="item">
-          <img class="top" src="./assets/images/price/app.svg" alt="app" />
+          <img class="top" src="../assets/images/price/app.svg" alt="app" />
           <span>Можно оплатить любую покупку</span>
           <span class="up"><a style="text-decoration: underline 2px;" href="">на lexmer.ru</a></span>
         </div>
