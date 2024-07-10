@@ -80,8 +80,10 @@ const toggleQuestion = (index) => {
     justify-content: space-between;
     padding: 100px;
 
-    @include breakpoint ('desktop', 'medium') {
-      width: 1610px;
+    @include breakpoint ('desktop',
+      'medium') {
+      width: 1440px;
+      padding: 100px 20px;
     }
 
     .title {
@@ -107,6 +109,7 @@ const toggleQuestion = (index) => {
     width: 100%;
     margin-bottom: 10px;
     border: solid 1px #EBEBEB;
+
     .question-header {
       width: 1020px;
       height: 60px;
@@ -121,7 +124,8 @@ const toggleQuestion = (index) => {
       text-align: left;
       user-select: none;
 
-      @include breakpoint ('desktop', 'medium') {
+      @include breakpoint ('desktop',
+        'medium') {
         width: 930px;
         height: 60px;
       }

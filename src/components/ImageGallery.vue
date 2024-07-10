@@ -115,7 +115,8 @@ export default {
     text-align: left;
     text-transform: uppercase;
 
-    @include breakpoint ('desktop', 'medium') {
+    @include breakpoint ('desktop',
+      'medium') {
       font-size: 20px;
     }
   }

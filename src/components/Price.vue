@@ -38,10 +38,14 @@ import Title from "./Title.vue";
 </script>
 
 <style scoped lang="scss">
+
 .price {
   display: flex;
   background: white;
   padding: 74px 100px;
+  @include breakpoint ('desktop', 'medium') {
+      padding: 74px 20px;
+    }
 
   &_content {
     width: 1920px;
@@ -50,8 +54,9 @@ import Title from "./Title.vue";
     flex-direction: column;
     gap: 50px;
 
-    @include breakpoint ('desktop', 'medium') {
-      width: 1610px;
+    @include breakpoint ('desktop',
+      'medium') {
+      width: 1440px;
     }
 
     .title {
@@ -76,7 +81,8 @@ import Title from "./Title.vue";
           display: flex;
           gap: 10px;
 
-          @include breakpoint ('desktop', 'medium') {
+          @include breakpoint ('desktop',
+            'medium') {
             flex-direction: column;
             width: 232px;
             gap: 0px;

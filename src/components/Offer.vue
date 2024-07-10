@@ -27,6 +27,10 @@ import Title from "./Title.vue";
   background: #edf0f2;
   padding: 74px 100px;
 
+  @include breakpoint ('desktop', 'medium') {
+    padding: 74px 20px;
+  }
+
   &_content {
     width: 1920px;
     margin: 0 auto;
@@ -35,7 +39,7 @@ import Title from "./Title.vue";
     gap: 135px;
 
     @include breakpoint ('desktop', 'medium') {
-      width: 1610px;
+      width: 1440px;
       gap: 0;
     }
 
@@ -86,7 +90,8 @@ import Title from "./Title.vue";
   .box-card {
     width: 925px;
 
-    @include breakpoint ('desktop', 'medium') {
+    @include breakpoint ('desktop',
+      'medium') {
       width: 810px;
     }
 

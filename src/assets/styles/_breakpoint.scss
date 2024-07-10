@@ -1,6 +1,6 @@
 $breakpoints: (
-  'desktop': ('base':1920px,
-    'medium': 1610px,
+  'desktop': ('base':1610px,
+    'medium': 1440px,
     'wide': 1920px,
   ),
   'mobile': ('base': 320px,
@@ -9,7 +9,7 @@ $breakpoints: (
   ),
   'tablet': ('base': 576px,
     'medium': 768px,
-    'wide': 1024px,
+    'wide': 1000px,
   ),
 );
 

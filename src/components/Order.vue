@@ -43,8 +43,10 @@ import OrderForm from "@/components/OrderForm.vue";
     gap: 50px;
     padding: 0 100px;
 
-    @include breakpoint ('desktop', 'medium') {
-      width: 1610px;
+    @include breakpoint ('desktop',
+      'medium') {
+      width: 1440px;
+      padding: 0 20px;
     }
   }
 
