@@ -73,14 +73,16 @@ const toggleQuestion = (index) => {
 
 <style lang="scss" scoped>
 .popular-questions {
-  width: 100%;
-
   .popular-questions-container {
     width: 1920px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding: 100px;
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 1610px;
+    }
 
     .title {
       display: flex;
@@ -105,7 +107,6 @@ const toggleQuestion = (index) => {
     width: 100%;
     margin-bottom: 10px;
     border: solid 1px #EBEBEB;
-
     .question-header {
       width: 1020px;
       height: 60px;
@@ -118,7 +119,12 @@ const toggleQuestion = (index) => {
       font-weight: 400;
       line-height: 23.1px;
       text-align: left;
+      user-select: none;
 
+      @include breakpoint ('desktop', 'medium') {
+        width: 930px;
+        height: 60px;
+      }
 
       .icon {
         width: 40px;
@@ -130,8 +136,8 @@ const toggleQuestion = (index) => {
       }
 
       .arrow-icon {
-        width: 16px;
-        height: 16px;
+        width: 25px;
+        height: 25px;
         fill: none;
         stroke: #333;
         stroke-width: 2;
@@ -147,9 +153,8 @@ const toggleQuestion = (index) => {
       width: 680px;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.5s ease;
+      transition: ease-out 0.2s;
       color: #666666;
-      font-family: Golos;
       font-size: 18px;
       font-weight: 400;
       line-height: 23.4px;
@@ -158,7 +163,7 @@ const toggleQuestion = (index) => {
       padding-left: 30px;
 
       &.opened {
-        max-height: 500px;
+        max-height: 800px;
         margin-bottom: 20px;
       }
     }

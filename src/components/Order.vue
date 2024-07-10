@@ -2,7 +2,7 @@
   <div class="order">
     <div class="order_content">
       <div class="title">
-        <Title span1="Закажите сертификат в подарок" span2="" />
+        <Title span1="Закажите сертификат в подарок" span2="" style="margin-top: 100px;" />
       </div>
       <div class="order-form">
         <div class="content">
@@ -32,7 +32,6 @@ import OrderForm from "@/components/OrderForm.vue";
 
 <style scoped lang="scss">
 .order {
-  width: 100%;
   background-color: #edf0f2;
 
   &_content {
@@ -41,21 +40,30 @@ import OrderForm from "@/components/OrderForm.vue";
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 106px 100px;
     gap: 50px;
+    padding: 0 100px;
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 1610px;
+    }
   }
 
   .order-form {
-    width: 100%;
     padding: 55px 60px;
     display: flex;
+    width: 100%;
     background-color: white;
+    margin-bottom: 100px;
 
     .content {
-      display: flex;
       width: 100%;
-      justify-content: space-between;
-      gap: 45px;
+      display: flex;
+      gap: 65px;
+
+
+      .form {
+        width: 575px;
+      }
 
       .gallery {
         display: flex;

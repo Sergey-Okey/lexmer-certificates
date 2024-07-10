@@ -13,7 +13,10 @@
         <div class="item">
           <img class="top" src="@/assets/images/price/pay.svg" alt="pay" />
           <span>Гибкий выбор суммы</span>
-          <span class="up">от 1 000 до 50 000 РУб.</span>
+          <div class="">
+            <span class="up">от 1 000 </span>
+            <span class="up">до 50 000 РУб.</span>
+          </div>
         </div>
         <div class="item">
           <span>Сертификат действует</span>
@@ -38,7 +41,7 @@ import Title from "./Title.vue";
 .price {
   display: flex;
   background: white;
-  padding: 74px 142px;
+  padding: 74px 100px;
 
   &_content {
     width: 1920px;
@@ -46,6 +49,10 @@ import Title from "./Title.vue";
     display: flex;
     flex-direction: column;
     gap: 50px;
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 1610px;
+    }
 
     .title {
       display: inline-flex;
@@ -64,6 +71,17 @@ import Title from "./Title.vue";
         display: flex;
         flex-direction: column;
         gap: 27px;
+
+        div {
+          display: flex;
+          gap: 10px;
+
+          @include breakpoint ('desktop', 'medium') {
+            flex-direction: column;
+            width: 232px;
+            gap: 0px;
+          }
+        }
 
         span {
           width: auto;

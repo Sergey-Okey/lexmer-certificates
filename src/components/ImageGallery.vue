@@ -92,6 +92,11 @@ export default {
   height: 499.28px;
   position: relative;
 
+  @include breakpoint ('desktop', 'medium') {
+    width: 478.98px;
+    height: 319.32px;
+  }
+
   &::after {
     content: 'LEXMER';
     position: absolute;
@@ -109,6 +114,10 @@ export default {
     letter-spacing: 30px;
     text-align: left;
     text-transform: uppercase;
+
+    @include breakpoint ('desktop', 'medium') {
+      font-size: 20px;
+    }
   }
 }
 </style>

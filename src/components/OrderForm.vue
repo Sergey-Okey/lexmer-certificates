@@ -2,12 +2,8 @@
   <div class="container">
     <!-- Amount selection buttons -->
     <div class="amount-buttons">
-      <button
-        v-for="amount in amounts"
-        :key="amount"
-        :class="{ selected: selectedAmount === amount }"
-        @click="selectAmount(amount)"
-      >
+      <button v-for="amount in amounts" :key="amount" :class="{ selected: selectedAmount === amount }"
+        @click="selectAmount(amount)">
         {{ amount }} ₽
       </button>
     </div>
@@ -30,25 +26,12 @@
         </div>
       </div>
       <div>
-        <input
-          v-if="sendOption === 'email'"
-          type="email"
-          v-model="email"
-          placeholder="Email"
-          @input="validateEmail"
-        />
+        <input v-if="sendOption === 'email'" type="email" v-model="email" placeholder="Email" @input="validateEmail" />
         <div v-if="sendOption === 'email' && emailError" class="error">
           {{ emailError }}
         </div>
-        <input
-          v-if="sendOption === 'phone'"
-          type="tel"
-          v-model="phone"
-          placeholder="+7 (___) ___-__-__"
-          ref="phoneInput"
-          @input="validatePhone"
-          @focus="applyPhoneMask"
-        />
+        <input v-if="sendOption === 'phone'" type="tel" v-model="phone" placeholder="+7 (___) ___-__-__"
+          ref="phoneInput" @input="validatePhone" @focus="applyPhoneMask" />
         <div v-if="sendOption === 'phone' && phoneError" class="error">
           {{ phoneError }}
         </div>
@@ -70,33 +53,19 @@
       </span>
       <div class="radio-container">
         <div>
-          <input
-            type="radio"
-            id="immediately"
-            value="immediately"
-            v-model="sendTime"
-          />
+          <input type="radio" id="immediately" value="immediately" v-model="sendTime" />
           <label for="immediately">Сразу после покупки</label>
         </div>
         <div>
-          <input
-            type="radio"
-            id="schedule"
-            value="schedule"
-            v-model="sendTime"
-          />
+          <input type="radio" id="schedule" value="schedule" v-model="sendTime" />
           <label for="schedule">Выбрать дату и время</label>
         </div>
       </div>
       <div>
-        <input
-          v-if="sendTime === 'schedule'"
-          type="datetime-local"
-          v-model="scheduleDate"
-        />
+        <input v-if="sendTime === 'schedule'" type="datetime-local" v-model="scheduleDate" />
       </div>
       <div class="checkbox-container">
-        <input type="checkbox" id="notifyMe" v-model="notifyMe" />
+        <input type="checkbox" id="notifyMe" v-model="notifyMe" checked />
         <label for="notifyMe">
           Сообщить мне, когда сертификат будет доставлен
         </label>
@@ -108,11 +77,7 @@
       <span>
         <data value="2" style="color: grey">5.</data> Добавьте поздравление
       </span>
-      <textarea
-        v-model="message"
-        placeholder="Сообщение для получателя"
-        maxlength="1000"
-      ></textarea>
+      <textarea v-model="message" placeholder="Сообщение для получателя" maxlength="1000"></textarea>
       <div class="message-length">
         Введено символов: {{ message.length }}/1000
       </div>
@@ -138,7 +103,7 @@ export default {
       smsNotify: false,
       sendTime: "immediately",
       scheduleDate: "",
-      notifyMe: false,
+      notifyMe: true,
       message: "",
     };
   },
@@ -160,8 +125,8 @@ export default {
       this.phoneError = !this.phone
         ? "Пожалуйста, введите номер телефона."
         : !phonePattern.test(this.phone)
-        ? "Неверный формат телефона"
-        : "";
+          ? "Неверный формат телефона"
+          : "";
     },
   },
 };
@@ -174,6 +139,7 @@ export default {
   flex-direction: column;
   gap: 40px;
 }
+
 .message {
   display: flex;
   align-items: center;
@@ -192,6 +158,7 @@ export default {
     text-align: left;
   }
 }
+
 span {
   font-family: Golos;
   font-size: 30px;
@@ -245,7 +212,7 @@ input[type="email"],
 input[type="tel"],
 input[type="datetime-local"],
 textarea {
-  width: 575px;
+  width: 100%;
   height: 56px;
   gap: 5px;
   padding: 15px;
@@ -280,6 +247,7 @@ textarea {
   display: flex;
   gap: 20px;
   margin: 20px 0;
+
   div {
     display: flex;
     align-items: center;

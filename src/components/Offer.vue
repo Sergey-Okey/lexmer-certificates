@@ -32,7 +32,13 @@ import Title from "./Title.vue";
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 135px;
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 1610px;
+      gap: 0;
+    }
+
   }
 
   .box-title {
@@ -74,7 +80,18 @@ import Title from "./Title.vue";
       color: white;
       margin-top: 35px;
 
-      @include breakpoint('desktop') {}
+    }
+  }
+
+  .box-card {
+    width: 925px;
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 810px;
+    }
+
+    img {
+      width: 100%;
     }
   }
 }
