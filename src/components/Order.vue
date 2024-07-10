@@ -33,6 +33,7 @@ import OrderForm from "@/components/OrderForm.vue";
 <style scoped lang="scss">
 .order {
   background-color: #edf0f2;
+  display: flex;
 
   &_content {
     width: 1920px;
@@ -48,6 +49,12 @@ import OrderForm from "@/components/OrderForm.vue";
       width: 1440px;
       padding: 0 20px;
     }
+
+    @include breakpoint ('mobile') {
+      width: 320px;
+      padding: 0 10px;
+      height: auto;
+    }
   }
 
   .order-form {
@@ -57,14 +64,28 @@ import OrderForm from "@/components/OrderForm.vue";
     background-color: white;
     margin-bottom: 100px;
 
+    @include breakpoint ('mobile') {
+      padding: 20px 25px;
+    }
+
     .content {
       width: 100%;
       display: flex;
       gap: 65px;
 
+      @include breakpoint ('mobile') {
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
 
       .form {
         width: 575px;
+
+        @include breakpoint ('mobile') {
+          width: 100%;
+          display: none;
+        }
       }
 
       .gallery {

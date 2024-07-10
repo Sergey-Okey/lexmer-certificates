@@ -86,9 +86,21 @@ const toggleQuestion = (index) => {
       padding: 100px 20px;
     }
 
+    @include breakpoint ('mobile') {
+      width: 100%;
+      flex-direction: column;
+      padding: 20px;
+
+    }
+
     .title {
       display: flex;
       flex-direction: column;
+
+      @include breakpoint ('mobile') {
+        width: 100%;
+        text-align: left;
+      }
 
       p {
         margin-top: 20px;
@@ -97,6 +109,12 @@ const toggleQuestion = (index) => {
         font-weight: 400;
         line-height: 20.25px;
         text-align: left;
+
+        @include breakpoint ('mobile') {
+          width: 100%;
+          padding: 10px 0;
+          margin: 0;
+        }
 
         a {
           text-decoration: underline;
@@ -108,11 +126,13 @@ const toggleQuestion = (index) => {
   .question {
     width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
     border: solid 1px #EBEBEB;
 
     .question-header {
       width: 1020px;
-      height: 60px;
+      height: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -127,7 +147,12 @@ const toggleQuestion = (index) => {
       @include breakpoint ('desktop',
         'medium') {
         width: 930px;
-        height: 60px;
+        padding: 20px;
+      }
+
+      @include breakpoint ('mobile') {
+        width: 100%;
+
       }
 
       .icon {
@@ -165,6 +190,11 @@ const toggleQuestion = (index) => {
       letter-spacing: -0.01em;
       text-align: left;
       padding-left: 30px;
+
+      @include breakpoint ('mobile') {
+        width: 100%;
+        display: flex;
+      }
 
       &.opened {
         max-height: 800px;

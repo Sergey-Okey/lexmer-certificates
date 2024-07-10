@@ -39,6 +39,11 @@ export default {
 .gallery-container {
   display: flex;
   gap: 20px;
+
+  @include breakpoint ('mobile') {
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
 }
 
 .thumbnails {
@@ -73,6 +78,8 @@ export default {
     letter-spacing: 10px;
     color: white;
     font-size: 10px;
+
+
   }
 }
 
@@ -94,7 +101,12 @@ export default {
 
   @include breakpoint ('desktop', 'medium') {
     width: 478.98px;
-    height: 319.32px;
+    ;
+  }
+
+  @include breakpoint ('mobile') {
+    width: 259px;
+    height: 172.67px;
   }
 
   &::after {
@@ -114,6 +126,10 @@ export default {
     letter-spacing: 30px;
     text-align: left;
     text-transform: uppercase;
+
+    @include breakpoint ('mobile') {
+      font-size: 20px;
+    }
 
     @include breakpoint ('desktop',
       'medium') {

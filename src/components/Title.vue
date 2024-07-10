@@ -21,8 +21,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.title{
+.title {
   display: flex;
   flex-direction: column;
 }
@@ -35,7 +34,16 @@ span {
   letter-spacing: -0.005em;
   text-align: left;
   text-transform: uppercase;
+
+  @include breakpoint ('mobile') {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 43.2px;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
 }
+
 .grey {
   color: #bcc0c5;
 }

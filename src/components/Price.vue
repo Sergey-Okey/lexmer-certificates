@@ -38,14 +38,18 @@ import Title from "./Title.vue";
 </script>
 
 <style scoped lang="scss">
-
 .price {
   display: flex;
   background: white;
   padding: 74px 100px;
+
   @include breakpoint ('desktop', 'medium') {
-      padding: 74px 20px;
-    }
+    padding: 74px 20px;
+  }
+
+  @include breakpoint ('mobile') {
+    padding: 60px 20px;
+  }
 
   &_content {
     width: 1920px;
@@ -59,6 +63,10 @@ import Title from "./Title.vue";
       width: 1440px;
     }
 
+    @include breakpoint ('mobile') {
+      width: 320px;
+    }
+
     .title {
       display: inline-flex;
       flex-direction: column;
@@ -69,6 +77,10 @@ import Title from "./Title.vue";
       display: flex;
       justify-content: space-between;
 
+      @include breakpoint ('mobile') {
+        flex-direction: column;
+      }
+
       .item {
         width: 100%;
         padding: 33px 54px;
@@ -76,6 +88,13 @@ import Title from "./Title.vue";
         display: flex;
         flex-direction: column;
         gap: 27px;
+
+        @include breakpoint ('mobile') {
+          padding: 30px 35px;
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
 
         div {
           display: flex;
@@ -87,6 +106,12 @@ import Title from "./Title.vue";
             width: 232px;
             gap: 0px;
           }
+
+          @include breakpoint ('mobile') {
+            flex-direction: column;
+            gap: 0;
+
+          }
         }
 
         span {
@@ -96,6 +121,8 @@ import Title from "./Title.vue";
           line-height: 23.4px;
           letter-spacing: -0.01em;
           text-align: left;
+
+
         }
 
         .up {
@@ -105,24 +132,43 @@ import Title from "./Title.vue";
           line-height: 37.8px;
           letter-spacing: -0.01em;
           text-align: left;
+
+          @include breakpoint ('mobile') {
+            font-size: 45px;
+          }
         }
 
         img {
           width: 31.59px;
           height: 31.59px;
           top: 180px;
-          left: 61px;
-          padding: 2.63px 0px 0px 0px;
+          padding: 2.63px;
           gap: 0px;
           opacity: 0px;
+
+          @include breakpoint ('mobile') {
+            position: absolute;
+            top: 80px;
+            right: 30px;
+            padding: 0;
+          }
         }
 
         .top {
           margin-bottom: 31px;
+
+          @include breakpoint ('mobile') {
+            margin-bottom: 0;
+          }
+
         }
 
         .bottom {
           margin-top: 31px;
+
+          @include breakpoint ('mobile') {
+            margin-top: 0;
+          }
         }
       }
     }

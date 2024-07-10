@@ -138,6 +138,11 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @include breakpoint ('mobile') {
+    width: 259px;
+    height: 172.67px;
+  }
 }
 
 .message {
@@ -166,6 +171,13 @@ span {
   line-height: 36px;
   text-align: left;
   margin-bottom: 20px;
+
+  @include breakpoint ('mobile') {
+    font-size: 25px;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+  }
 }
 
 .amount-buttons {
