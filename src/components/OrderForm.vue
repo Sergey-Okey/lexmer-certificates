@@ -156,7 +156,7 @@ onMounted(() => {
   display: flex;
 
   @include breakpoint('mobile') {
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: left;
   }
 
@@ -298,7 +298,7 @@ textarea {
   margin: 20px 0;
 
   @include breakpoint('mobile') {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   div {
