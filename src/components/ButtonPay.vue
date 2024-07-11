@@ -16,5 +16,8 @@ button {
   color: white;
   margin-top: 35px;
   cursor: pointer;
+  @include breakpoint('mobile') {
+      margin-top: 0;
+    }
 }
 </style>

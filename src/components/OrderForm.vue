@@ -11,7 +11,7 @@
     <!-- Send option section -->
     <div>
       <span class="title">
-        <data value="2" style="color: grey">3. </data>Куда отправить
+        <data value="2" style="color: grey">3.&nbsp;</data>Куда отправить
       </span>
       <div class="radio-container">
         <div class="message">
@@ -49,7 +49,7 @@
     <!-- Send time section -->
     <div>
       <span class="title">
-        <data value="2" style="color: grey">4. </data>Когда отправить
+        <data value="2" style="color: grey">4.&nbsp;</data>Когда отправить
       </span>
       <div class="radio-container">
         <div>
@@ -65,7 +65,7 @@
         <input v-if="sendTime === 'schedule'" type="datetime-local" v-model="scheduleDate" />
       </div>
       <div class="checkbox-container">
-        <input type="checkbox" id="notifyMe" v-model="notifyMe" checked />
+        <input type="checkbox" id="notifyMe" v-model="notifyMe" />
         <label for="notifyMe">
           Сообщить мне, когда сертификат будет доставлен
         </label>
@@ -73,9 +73,9 @@
     </div>
 
     <!-- Message section -->
-    <div>
+    <div class="textarea">
       <span>
-        <data value="2" style="color: grey">5. </data>Добавьте поздравление
+        <data value="2" style="color: grey">5.&nbsp;</data>Добавьте поздравление
       </span>
       <textarea v-model="message" placeholder="Сообщение для получателя" maxlength="1000"></textarea>
       <div class="message-length">
@@ -86,54 +86,56 @@
   </div>
 </template>
 
-<script>
-import Inputmask from "inputmask";
-import ButtonPay from "./ButtonPay.vue";
+<script setup>
+import { ref, onMounted } from 'vue';
+import Inputmask from 'inputmask';
+import ButtonPay from './ButtonPay.vue';
 
-export default {
-  data() {
-    return {
-      amounts: [
-        1000, 3000, 5000, 10000, 15000, 20000, 25000, 30000, 40000, 50000,
-      ],
-      selectedAmount: null,
-      sendOption: "email",
-      email: "",
-      phone: "",
-      emailError: "",
-      phoneError: "",
-      smsNotify: false,
-      sendTime: "immediately",
-      scheduleDate: "",
-      notifyMe: true,
-      message: "",
-    };
-  },
-  methods: {
-    applyPhoneMask() {
-      Inputmask({ mask: "+7 (999) 999-99-99" }).mask(this.$refs.phoneInput);
-    },
-    selectAmount(amount) {
-      this.selectedAmount = amount;
-    },
-    validateEmail() {
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      this.emailError = !emailPattern.test(this.email)
-        ? "Неверный формат email"
-        : "";
-    },
-    validatePhone() {
-      const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/;
-      this.phoneError = !this.phone
-        ? "Пожалуйста, введите номер телефона."
-        : !phonePattern.test(this.phone)
-          ? "Неверный формат телефона"
-          : "";
-    },
-  },
+const amounts = [
+  1000, 3000, 5000, 10000, 15000, 20000, 25000, 30000, 40000, 50000,
+];
+const selectedAmount = ref(null);
+const sendOption = ref('email');
+const email = ref('');
+const phone = ref('');
+const emailError = ref('');
+const phoneError = ref('');
+const smsNotify = ref(false);
+const sendTime = ref('immediately');
+const scheduleDate = ref('');
+const notifyMe = ref(true);
+const message = ref('');
+
+const phoneInput = ref(null);
+
+const applyPhoneMask = () => {
+  if (phoneInput.value) {
+    Inputmask({ mask: "+7 (999) 999-99-99" }).mask(phoneInput.value);
+  }
 };
-</script>
 
+const selectAmount = (amount) => {
+  selectedAmount.value = amount;
+};
+
+const validateEmail = () => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  emailError.value = !emailPattern.test(email.value) ? "Неверный формат email" : "";
+};
+
+const validatePhone = () => {
+  const phonePattern = /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/;
+  phoneError.value = !phone.value
+    ? "Пожалуйста, введите номер телефона."
+    : !phonePattern.test(phone.value)
+      ? "Неверный формат телефона"
+      : "";
+};
+
+onMounted(() => {
+  applyPhoneMask();
+});
+</script>
 
 <style scoped lang="scss">
 .container {
@@ -142,7 +144,7 @@ export default {
   gap: 40px;
   height: auto;
 
-  @include breakpoint ('mobile') {
+  @include breakpoint('mobile') {
     width: 100%;
     max-width: 290px;
     height: auto;
@@ -153,7 +155,7 @@ export default {
 .message {
   display: flex;
 
-  @include breakpoint ('mobile') {
+  @include breakpoint('mobile') {
     flex-direction: column;
     justify-content: left;
   }
@@ -169,7 +171,7 @@ export default {
     letter-spacing: -0.01em;
     text-align: left;
 
-    @include breakpoint ('mobile') {
+    @include breakpoint('mobile') {
       margin: 0;
     }
   }
@@ -183,7 +185,7 @@ span {
   text-align: left;
   margin-bottom: 20px;
 
-  @include breakpoint ('mobile') {
+  @include breakpoint('mobile') {
     font-size: 25px;
     width: 100%;
     display: flex;
@@ -192,7 +194,7 @@ span {
 }
 
 label {
-  @include breakpoint ('mobile') {
+  @include breakpoint('mobile') {
     font-size: 16px;
     font-weight: 400;
     line-height: 20.8px;
@@ -206,29 +208,30 @@ label {
   flex-wrap: wrap;
   gap: 13px;
   margin-top: 20px;
+
+  button {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.4px;
+    letter-spacing: -0.01em;
+    text-align: left;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
+    &.selected {
+      background-color: #e0e0e0;
+    }
+  }
 }
 
-button {
-  display: inline-block;
-  padding: 5px 15px;
-  border: 1px solid #ccc;
-  background-color: #f2f2f2;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  letter-spacing: -0.01em;
-  text-align: left;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
-
-  &.selected {
-    background-color: #e0e0e0;
-  }
-}
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -264,12 +267,20 @@ textarea {
   height: auto;
   margin-top: 20px;
 
-  @include breakpoint ('mobile') {
+  @include breakpoint('mobile') {
     font-size: 16px;
+    min-height: 140px;
   }
 }
 
+.textarea{
+  position: relative;
+}
+
 .message-length {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   font-size: 12px;
   color: #666;
 }
@@ -286,7 +297,7 @@ textarea {
   gap: 20px;
   margin: 20px 0;
 
-  @include breakpoint ('mobile') {
+  @include breakpoint('mobile') {
     flex-direction: column;
   }
 
@@ -294,6 +305,10 @@ textarea {
     display: flex;
     align-items: center;
     gap: 15px;
+
+    @include breakpoint('mobile') {
+      align-items: flex-start;
+    }
   }
 }
 

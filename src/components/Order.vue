@@ -2,7 +2,7 @@
   <div class="order">
     <div class="order_content">
       <div class="title">
-        <Title span1="Закажите сертификат в подарок" span2="" style="margin-top: 100px;" />
+        <Title span1="Закажите сертификат в подарок" span2="" />
       </div>
       <div class="order-form">
         <div class="content">
