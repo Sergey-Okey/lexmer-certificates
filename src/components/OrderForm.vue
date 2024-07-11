@@ -11,7 +11,7 @@
     <!-- Send option section -->
     <div>
       <span class="title">
-        <data value="2" style="color: grey">3.</data> Куда отправить
+        <data value="2" style="color: grey">3. </data>Куда отправить
       </span>
       <div class="radio-container">
         <div class="message">
@@ -49,7 +49,7 @@
     <!-- Send time section -->
     <div>
       <span class="title">
-        <data value="2" style="color: grey">4.</data> Когда отправить
+        <data value="2" style="color: grey">4. </data>Когда отправить
       </span>
       <div class="radio-container">
         <div>
@@ -75,18 +75,20 @@
     <!-- Message section -->
     <div>
       <span>
-        <data value="2" style="color: grey">5.</data> Добавьте поздравление
+        <data value="2" style="color: grey">5. </data>Добавьте поздравление
       </span>
       <textarea v-model="message" placeholder="Сообщение для получателя" maxlength="1000"></textarea>
       <div class="message-length">
         Введено символов: {{ message.length }}/1000
       </div>
     </div>
+    <ButtonPay />
   </div>
 </template>
 
 <script>
 import Inputmask from "inputmask";
+import ButtonPay from "./ButtonPay.vue";
 
 export default {
   data() {
