@@ -155,8 +155,12 @@ import Title from "./Title.vue";
           }
 
           @include breakpoint('mobile') {
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 0;
+          }
+
+          @include breakpoint ('tablet', 'medium') {
+            flex-wrap: nowrap;
           }
         }
 
