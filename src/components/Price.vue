@@ -44,7 +44,7 @@ import Title from "./Title.vue";
   padding: 74px 100px;
 
   @include breakpoint ('desktop', 'medium') {
-    padding: 74px 20px;
+    padding: 74px 10px;
   }
 
   @include breakpoint ('mobile') {

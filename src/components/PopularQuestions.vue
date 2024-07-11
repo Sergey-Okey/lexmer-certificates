@@ -89,7 +89,7 @@ const toggleQuestion = (index) => {
     @include breakpoint ('mobile') {
       width: 320px;
       flex-direction: column;
-      padding: 20px;
+      padding: 20px 10px;
     }
 
     @include breakpoint ('mobile', 'wide') {
