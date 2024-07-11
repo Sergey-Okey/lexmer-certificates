@@ -58,6 +58,10 @@ import OrderForm from "@/components/OrderForm.vue";
       padding: 0 10px;
       height: auto;
     }
+
+    @include breakpoint ('mobile', 'wide') {
+      max-width: 480px;
+    }
   }
 
   .order-form {
@@ -115,6 +119,11 @@ import OrderForm from "@/components/OrderForm.vue";
           line-height: 43.2px;
           letter-spacing: -0.01em;
           text-align: center;
+        }
+
+        @include breakpoint ('mobile', 'wide') {
+          text-align: left;
+          margin-bottom: 0px;
         }
       }
     }

@@ -53,6 +53,10 @@ import Title from "./Title.vue";
       gap: 0px;
     }
 
+    @include breakpoint ('mobile', 'wide') {
+      width: 480px;
+    }
+
   }
 
   .box-title {
@@ -64,6 +68,10 @@ import Title from "./Title.vue";
     @include breakpoint ('mobile') {
       width: 294px;
       gap: 0;
+    }
+
+    @include breakpoint ('mobile', 'wide') {
+      width: 400px;
     }
 
     span {
@@ -97,6 +105,11 @@ import Title from "./Title.vue";
         margin-top: 15px;
       }
 
+      @include breakpoint ('mobile', 'wide') {
+        width: 336px;
+        margin: 15px auto 0;
+      }
+
     }
 
     button {
@@ -125,6 +138,10 @@ import Title from "./Title.vue";
 
     @include breakpoint ('mobile') {
       width: 293px;
+    }
+
+    @include breakpoint ('mobile', 'wide') {
+      width: 435px;
     }
 
     img {

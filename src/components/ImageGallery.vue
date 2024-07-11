@@ -49,6 +49,7 @@ export default {
 
 .large-image {
   width: 100%;
+
   max-width: 748.92px;
   height: auto;
   position: relative;
@@ -99,6 +100,15 @@ export default {
 
   @include breakpoint('mobile') {
     gap: 10px;
+  }
+
+  @include breakpoint ('mobile', 'wide') {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 6px;
+    width: 100%;
+    max-width: 748.92px;
   }
 }
 

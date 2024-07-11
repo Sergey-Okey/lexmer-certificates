@@ -48,8 +48,9 @@ import Title from "./Title.vue";
   }
 
   @include breakpoint ('mobile') {
-    padding: 60px 20px;
+    padding: 60px 10px;
   }
+
 
   &_content {
     width: 1920px;
@@ -65,6 +66,10 @@ import Title from "./Title.vue";
 
     @include breakpoint ('mobile') {
       width: 320px;
+    }
+
+    @include breakpoint ('mobile', 'wide') {
+      width: 480px;
     }
 
     .title {

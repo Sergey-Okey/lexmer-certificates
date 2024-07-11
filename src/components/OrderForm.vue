@@ -150,6 +150,10 @@ onMounted(() => {
     height: auto;
     gap: 30px;
   }
+
+  @include breakpoint ('mobile', 'wide') {
+    max-width: 480px;
+  }
 }
 
 .message {
@@ -205,6 +209,7 @@ label {
 
 .amount-buttons {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   gap: 13px;
   margin-top: 20px;
@@ -221,6 +226,15 @@ label {
     line-height: 23.4px;
     letter-spacing: -0.01em;
     text-align: left;
+
+    @include breakpoint ('mobile', 'wide') {
+      font-size: 16px;
+      margin-top: 0px;
+    }
+
+    @include breakpoint ('mobile') {
+      font-size: 16px;
+    }
 
     &:hover {
       background-color: #f0f0f0;
@@ -273,7 +287,7 @@ textarea {
   }
 }
 
-.textarea{
+.textarea {
   position: relative;
 }
 

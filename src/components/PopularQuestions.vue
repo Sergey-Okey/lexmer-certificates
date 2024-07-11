@@ -90,7 +90,10 @@ const toggleQuestion = (index) => {
       width: 320px;
       flex-direction: column;
       padding: 20px;
+    }
 
+    @include breakpoint ('mobile', 'wide') {
+      width: 480px;
     }
 
     .title {
