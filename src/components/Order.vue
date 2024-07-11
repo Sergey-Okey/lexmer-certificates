@@ -62,6 +62,10 @@ import OrderForm from "@/components/OrderForm.vue";
     @include breakpoint ('mobile', 'wide') {
       max-width: 480px;
     }
+
+    @include breakpoint ('tablet', 'medium') {
+      max-width: 768px
+    }
   }
 
   .order-form {

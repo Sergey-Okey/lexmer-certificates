@@ -49,7 +49,6 @@ export default {
 
 .large-image {
   width: 100%;
-
   max-width: 748.92px;
   height: auto;
   position: relative;

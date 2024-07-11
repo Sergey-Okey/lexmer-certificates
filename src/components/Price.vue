@@ -72,6 +72,10 @@ import Title from "./Title.vue";
       width: 480px;
     }
 
+    @include breakpoint ('tablet', 'medium') {
+      width: 768px
+    }
+
     .title {
       display: inline-flex;
       flex-direction: column;
@@ -84,6 +88,14 @@ import Title from "./Title.vue";
 
       @include breakpoint ('mobile') {
         flex-direction: column;
+      }
+
+      @include breakpoint ('tablet', 'medium') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        max-width: 748.92px;
       }
 
       .item {

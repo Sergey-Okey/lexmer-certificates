@@ -43,6 +43,13 @@ span {
     text-align: center;
   }
 
+  @include breakpoint ('tablet', 'medium') {
+    font-size: 85px;
+    font-weight: 400;
+    line-height: 76.5px;
+    letter-spacing: -0.005em;
+    text-align: center;
+  }
 }
 
 .grey {

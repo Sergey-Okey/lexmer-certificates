@@ -57,6 +57,10 @@ import Title from "./Title.vue";
       width: 480px;
     }
 
+    @include breakpoint ('tablet', 'medium') {
+      width: 768px
+    }
+
   }
 
   .box-title {
@@ -72,6 +76,10 @@ import Title from "./Title.vue";
 
     @include breakpoint ('mobile', 'wide') {
       width: 400px;
+    }
+
+    @include breakpoint ('tablet', 'medium') {
+      width: 620px
     }
 
     span {
@@ -110,6 +118,14 @@ import Title from "./Title.vue";
         margin: 15px auto 0;
       }
 
+      @include breakpoint ('tablet', 'medium') {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 23.4px;
+        letter-spacing: -0.01em;
+        text-align: center;
+      }
+
     }
 
     button {
@@ -142,6 +158,10 @@ import Title from "./Title.vue";
 
     @include breakpoint ('mobile', 'wide') {
       width: 435px;
+    }
+
+    @include breakpoint ('tablet', 'medium') {
+      width: 555px
     }
 
     img {
