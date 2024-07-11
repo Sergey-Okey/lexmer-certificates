@@ -49,7 +49,7 @@ import Title from "./Title.vue";
 
     @include breakpoint ('mobile') {
       width: 320px;
-      flex-direction: column-reverse;
+      flex-wrap: wrap-reverse;
       gap: 0px;
     }
 
@@ -59,6 +59,11 @@ import Title from "./Title.vue";
 
     @include breakpoint ('tablet', 'medium') {
       width: 768px
+    }
+
+    @include breakpoint ('tablet', 'wide') {
+      width: 1000px;
+      flex-wrap: nowrap;
     }
 
   }
@@ -81,6 +86,11 @@ import Title from "./Title.vue";
     @include breakpoint ('tablet', 'medium') {
       width: 620px
     }
+
+        @include breakpoint ('tablet', 'wide') {
+          width: 100%;
+          max-width: 400px;
+        }
 
     span {
       font-family: "Bebas", sans-serif;
@@ -126,6 +136,10 @@ import Title from "./Title.vue";
         text-align: center;
       }
 
+      @include breakpoint ('tablet', 'wide') {
+        margin: 15px 0;
+        text-align: left;
+      }
     }
 
     button {
@@ -140,6 +154,11 @@ import Title from "./Title.vue";
 
       @include breakpoint ('mobile') {
         margin: 25px auto 40px;
+      }
+
+      @include breakpoint ('tablet', 'wide') {
+        margin: 25px 0;
+
       }
     }
   }
@@ -166,6 +185,7 @@ import Title from "./Title.vue";
 
     img {
       width: 100%;
+      height: auto;
     }
   }
 }

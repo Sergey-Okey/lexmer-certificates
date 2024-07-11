@@ -100,6 +100,10 @@ const toggleQuestion = (index) => {
       width: 768px
     }
 
+    @include breakpoint ('tablet', 'wide') {
+      width: 1000px
+    }
+
     .title {
       display: flex;
       flex-direction: column;

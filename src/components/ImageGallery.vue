@@ -45,6 +45,11 @@ export default {
   @include breakpoint('mobile') {
     gap: 15px;
   }
+
+  @include breakpoint('tablet', 'wide') {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 }
 
 .large-image {
@@ -87,6 +92,10 @@ export default {
       letter-spacing: 15px;
     }
   }
+
+  @include breakpoint('tablet', 'wide') {
+    max-width: 750px;
+  }
 }
 
 .thumbnails {
@@ -108,6 +117,12 @@ export default {
     gap: 6px;
     width: 100%;
     max-width: 748.92px;
+  }
+
+  @include breakpoint('tablet', 'wide') {
+    grid-template-columns: repeat(1, 4fr);
+    gap: 15px;
+    max-width: 195px;
   }
 }
 

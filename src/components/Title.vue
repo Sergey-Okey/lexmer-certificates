@@ -50,6 +50,10 @@ span {
     letter-spacing: -0.005em;
     text-align: center;
   }
+
+  @include breakpoint ('tablet', 'wide') {
+   text-align: left;
+  }
 }
 
 .grey {
