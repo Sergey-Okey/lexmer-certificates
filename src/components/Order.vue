@@ -34,9 +34,13 @@ import OrderForm from "@/components/OrderForm.vue";
 .order {
   background-color: #edf0f2;
   display: flex;
+  flex-direction: column;
+  height: auto;
 
   &_content {
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -44,14 +48,13 @@ import OrderForm from "@/components/OrderForm.vue";
     gap: 50px;
     padding: 0 100px;
 
-    @include breakpoint ('desktop',
-      'medium') {
-      width: 1440px;
+    @include breakpoint('desktop', 'medium') {
+      max-width: 1440px;
       padding: 0 20px;
     }
 
-    @include breakpoint ('mobile') {
-      width: 320px;
+    @include breakpoint('mobile') {
+      max-width: 320px;
       padding: 0 10px;
       height: auto;
     }
@@ -60,31 +63,37 @@ import OrderForm from "@/components/OrderForm.vue";
   .order-form {
     padding: 55px 60px;
     display: flex;
+    height: auto;
+    flex-direction: column;
     width: 100%;
     background-color: white;
     margin-bottom: 100px;
 
-    @include breakpoint ('mobile') {
+    @include breakpoint('mobile') {
       padding: 20px 25px;
     }
 
     .content {
       width: 100%;
       display: flex;
+      flex-direction: row;
       gap: 65px;
+      height: auto;
 
-      @include breakpoint ('mobile') {
+      @include breakpoint('mobile') {
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        gap: 30px;
       }
 
       .form {
         width: 575px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
 
-        @include breakpoint ('mobile') {
+        @include breakpoint('mobile') {
           width: 100%;
-          display: none;
         }
       }
 
@@ -99,6 +108,14 @@ import OrderForm from "@/components/OrderForm.vue";
         line-height: 36px;
         text-align: left;
         margin-bottom: 20px;
+
+        @include breakpoint ('mobile') {
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 43.2px;
+          letter-spacing: -0.01em;
+          text-align: center;
+        }
       }
     }
   }

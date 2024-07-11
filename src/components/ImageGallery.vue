@@ -1,12 +1,12 @@
 <template>
   <div class="gallery-container">
+    <div class="large-image">
+      <img :src="getImageSrc(currentImage)" alt="Selected" />
+    </div>
     <div class="thumbnails">
       <div v-for="(image, index) in images" :key="index" class="thumbnail" @click="selectImage(index)">
         <img :src="getImageSrc(image)" :alt="'Image ' + index" />
       </div>
-    </div>
-    <div class="large-image">
-      <img :src="getImageSrc(currentImage)" alt="Selected" />
     </div>
   </div>
 </template>
@@ -38,75 +38,25 @@ export default {
 <style scoped lang="scss">
 .gallery-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
 
-  @include breakpoint ('mobile') {
-    flex-direction: column-reverse;
+  @include breakpoint('mobile') {
     gap: 15px;
   }
 }
 
-.thumbnails {
-  display: flex;
-  flex-direction: column;
-  gap: 14.49px;
-}
-
-.thumbnail {
-  position: relative;
-  cursor: pointer;
-  width: 171.02px;
-  height: 114.01px;
-
-  &:hover {
-    padding: 5px;
-    background-color: #edf0f2;
-    border: solid 3px black;
-    transition: ease 0.1s;
-  }
-
-  &::after {
-    content: 'LEXMER';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 10px;
-    color: white;
-    font-size: 10px;
-
-
-  }
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.large-image img {
-  width: 100%;
-  object-fit: cover;
-}
-
 .large-image {
-  width: 748.92px;
-  height: 499.28px;
+  width: 100%;
+  max-width: 748.92px;
+  height: auto;
   position: relative;
 
-  @include breakpoint ('desktop', 'medium') {
-    width: 478.98px;
-    ;
-  }
-
-  @include breakpoint ('mobile') {
-    width: 259px;
-    height: 172.67px;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   &::after {
@@ -127,14 +77,71 @@ export default {
     text-align: left;
     text-transform: uppercase;
 
-    @include breakpoint ('mobile') {
+    @include breakpoint('mobile') {
       font-size: 20px;
+      letter-spacing: 15px;
     }
 
-    @include breakpoint ('desktop',
-      'medium') {
+    @include breakpoint('desktop', 'medium') {
       font-size: 20px;
+      letter-spacing: 15px;
     }
   }
+}
+
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 14.49px;
+  width: 100%;
+  max-width: 748.92px;
+
+  @include breakpoint('mobile') {
+    gap: 10px;
+  }
+}
+
+.thumbnail {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+
+  &:hover {
+    background-color: #edf0f2;
+    border: solid 3px black;
+    transition: ease 0.1s;
+  }
+
+  &::after {
+    content: 'LEXMER';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 10px;
+    color: white;
+    font-size: 10px;
+
+    @include breakpoint('mobile') {
+      font-size: 6px;
+    }
+  }
+}
+
+.thumbnail img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 </style>

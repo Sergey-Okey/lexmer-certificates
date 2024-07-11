@@ -138,29 +138,38 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: auto;
 
   @include breakpoint ('mobile') {
-    width: 259px;
-    height: 172.67px;
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    gap: 30px;
   }
 }
 
 .message {
   display: flex;
-  align-items: center;
+
+  @include breakpoint ('mobile') {
+    flex-direction: column;
+    justify-content: left;
+  }
 
   div {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-right: 40px;
-
-    font-family: Golos;
     font-size: 18px;
     font-weight: 400;
     line-height: 23.4px;
     letter-spacing: -0.01em;
     text-align: left;
+
+    @include breakpoint ('mobile') {
+      margin: 0;
+    }
   }
 }
 
@@ -175,8 +184,18 @@ span {
   @include breakpoint ('mobile') {
     font-size: 25px;
     width: 100%;
-    flex-direction: column;
     display: flex;
+    margin-bottom: 0;
+  }
+}
+
+label {
+  @include breakpoint ('mobile') {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    letter-spacing: -0.01em;
+    text-align: left;
   }
 }
 
@@ -240,7 +259,12 @@ textarea {
 
 textarea {
   resize: vertical;
+  height: auto;
   margin-top: 20px;
+
+  @include breakpoint ('mobile') {
+    font-size: 16px;
+  }
 }
 
 .message-length {
@@ -259,6 +283,10 @@ textarea {
   display: flex;
   gap: 20px;
   margin: 20px 0;
+
+  @include breakpoint ('mobile') {
+    flex-direction: column;
+  }
 
   div {
     display: flex;
