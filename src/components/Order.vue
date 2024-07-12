@@ -54,6 +54,10 @@ import OrderForm from "@/components/OrderForm.vue";
       height: auto;
     }
 
+    @include breakpoint ('mobile') {
+     padding: 50px 10px;
+    }
+
     @include breakpoint ('mobile', 'wide') {
       max-width: 480px;
     }
@@ -72,9 +76,14 @@ import OrderForm from "@/components/OrderForm.vue";
       gap: 45px;
     }
 
+    @include breakpoint ('desktop') {
+      max-width: 1610px;
+      padding: 100px;
+    }
+
     @include breakpoint ('desktop', 'wide') {
       max-width: 1920px;
-      padding:100px;
+      padding: 100px;
     }
   }
 

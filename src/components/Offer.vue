@@ -25,84 +25,82 @@ import Title from "./Title.vue";
 .offer {
   display: flex;
   background: #edf0f2;
-  padding: 74px 100px;
-
-  @include breakpoint ('desktop', 'medium') {
-    padding: 74px 10px;
-  }
-
-  @include breakpoint ('mobile') {
-    padding: 50px 10px;
-  }
 
   &_content {
-    width: 1920px;
-    margin: 0 auto;
+    width: 100%;
+    padding: 50px 100px;
     display: flex;
     align-items: center;
     gap: 135px;
 
     @include breakpoint ('mobile') {
-      width: 320px;
+      max-width: 320px;
       flex-wrap: wrap-reverse;
       gap: 0px;
+      padding: 50px 20px;
     }
 
     @include breakpoint ('mobile', 'wide') {
-      width: 480px;
+      max-width: 480px;
+      padding:50px 20px;
     }
 
     @include breakpoint ('tablet', 'medium') {
-      width: 768px
+      max-width: 768px;
+      padding: 50px 20px;
     }
 
     @include breakpoint ('tablet', 'wide') {
-      width: 1000px;
+      max-width: 1000px;
+      padding: 50px 20px;
       flex-wrap: nowrap;
     }
 
     @include breakpoint ('desktop', 'medium') {
-      width: 1440px;
+      max-width: 1440px;
       gap: 0;
     }
 
+    @include breakpoint ('desktop') {
+      max-width: 1610px;
+    }
+
     @include breakpoint ('desktop', 'wide') {
-      width: 1920px;
+      max-width: 1920px;
       gap: 135px;
-      padding: 50px 100px;
     }
 
   }
 
   .box-title {
-    width: 620px;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
     @include breakpoint ('mobile') {
-      width: 294px;
+      max-width: 320px;
       gap: 0;
     }
 
     @include breakpoint ('mobile', 'wide') {
-      width: 400px;
+      max-width: 100%;
     }
 
     @include breakpoint ('tablet', 'medium') {
-      width: 620px;
+      max-width: 100%;
     }
 
     @include breakpoint ('tablet', 'wide') {
-      width: 400px;
+      max-width: 400px;
     }
 
     @include breakpoint ('desktop', 'medium') {
-      width: 620px;
+      max-width: 620px;
     }
 
     span {
-      font-family: "Bebas", sans-serif;
       font-size: 85px;
       font-weight: 400;
       line-height: 76.5px;
@@ -116,6 +114,7 @@ import Title from "./Title.vue";
     }
 
     p {
+      width: 100%;
       font-size: 18px;
       font-weight: 400;
       line-height: 23.4px;
@@ -133,7 +132,7 @@ import Title from "./Title.vue";
       }
 
       @include breakpoint ('mobile', 'wide') {
-        width: 336px;
+        max-width: 336px;
         margin: 15px auto 0;
       }
 
@@ -151,7 +150,7 @@ import Title from "./Title.vue";
       }
 
       @include breakpoint ('desktop', 'medium') {
-        width: 445px;
+        max-width: 445px;
       }
     }
 
@@ -166,7 +165,7 @@ import Title from "./Title.vue";
       margin-top: 35px;
 
       @include breakpoint ('mobile') {
-        margin: 25px auto 40px;
+        margin: 25px auto 0;
       }
 
       @include breakpoint ('tablet', 'wide') {
@@ -177,32 +176,12 @@ import Title from "./Title.vue";
   }
 
   .box-card {
-    width: 925px;
-
-
-    @include breakpoint ('mobile') {
-      width: 293px;
-    }
-
-    @include breakpoint ('mobile', 'wide') {
-      width: 435px;
-    }
-
-    @include breakpoint ('tablet', 'medium') {
-      width: 555px
-    }
-
-    @include breakpoint ('desktop', 'medium') {
-      width: 810px;
-    }
-
-    @include breakpoint ('desktop', 'wide') {
-      width: 924px;
-    }
+    width: 100%;
+    height: auto;
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
 }

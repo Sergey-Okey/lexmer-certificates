@@ -40,10 +40,10 @@ export default {
   display: grid;
   gap: 20px;
   width: 100%;
-  max-width: 748.92px;
+  max-width: 750px;
 
   @include breakpoint('mobile') {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
     grid-template-rows: auto auto;
   }
 
@@ -67,7 +67,7 @@ export default {
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -78,6 +78,7 @@ export default {
     height: 100%;
     left: 0;
     top: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,10 +101,10 @@ export default {
     }
 
     @include breakpoint('tablet', 'wide') {
-      width: 179.62px;
-      height: 18.66px;
-      top: 150.33px;
-      left: 149.68px;
+      width: 160px;
+      height: 19px;
+      top: 150px;
+      left: 150px;
       gap: 0px;
       opacity: 0px;
     }
@@ -112,11 +113,16 @@ export default {
   @include breakpoint('tablet', 'wide') {
     max-width: 480px;
   }
+
+  @include breakpoint('desktop') {
+    max-width: 765px;
+  }
 }
 
 .thumbnails {
   display: grid;
   gap: 14.49px;
+  width: 100%;
 
   @include breakpoint('mobile') {
     grid-template-columns: repeat(2, 1fr);
@@ -144,8 +150,7 @@ export default {
   position: relative;
   cursor: pointer;
   width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
+  height: 100%;
   overflow: hidden;
 
   &:hover {

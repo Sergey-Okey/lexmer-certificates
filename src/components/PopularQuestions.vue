@@ -82,7 +82,7 @@ const toggleQuestion = (index) => {
 
     @include breakpoint ('mobile') {
       width: 320px;
-      flex-direction: column;
+      flex-wrap: wrap;
       padding: 20px 10px;
     }
 
@@ -101,6 +101,8 @@ const toggleQuestion = (index) => {
     @include breakpoint ('desktop',
       'medium') {
       width: 1440px;
+      flex-wrap: nowrap;
+      gap: 80px;
     }
 
     @include breakpoint ('desktop') {
@@ -108,7 +110,7 @@ const toggleQuestion = (index) => {
       padding: 100px;
     }
 
-    @include breakpoint ('desktop','wide') {
+    @include breakpoint ('desktop', 'wide') {
       width: 1920px;
     }
 
@@ -119,6 +121,11 @@ const toggleQuestion = (index) => {
       @include breakpoint ('mobile') {
         width: 100%;
         text-align: left;
+      }
+
+      @include breakpoint ('desktop',
+        'medium') {
+        max-width: 370px;
       }
 
       p {
@@ -133,6 +140,12 @@ const toggleQuestion = (index) => {
           width: 100%;
           padding: 10px 0;
           margin: 0;
+        }
+
+        @include breakpoint ('desktop',
+          'medium') {
+          width: 100%;
+          max-width: 400px;
         }
 
         a {
