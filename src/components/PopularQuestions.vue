@@ -80,12 +80,6 @@ const toggleQuestion = (index) => {
     justify-content: space-between;
     padding: 100px;
 
-    @include breakpoint ('desktop',
-      'medium') {
-      width: 1440px;
-      padding: 100px 20px;
-    }
-
     @include breakpoint ('mobile') {
       width: 320px;
       flex-direction: column;
@@ -102,6 +96,20 @@ const toggleQuestion = (index) => {
 
     @include breakpoint ('tablet', 'wide') {
       width: 1000px
+    }
+
+    @include breakpoint ('desktop',
+      'medium') {
+      width: 1440px;
+    }
+
+    @include breakpoint ('desktop') {
+      width: 1610px;
+      padding: 100px;
+    }
+
+    @include breakpoint ('desktop','wide') {
+      width: 1920px;
     }
 
     .title {

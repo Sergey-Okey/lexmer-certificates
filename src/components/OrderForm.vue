@@ -162,6 +162,10 @@ onMounted(() => {
   @include breakpoint ('tablet', 'wide') {
     max-width: 1000px
   }
+
+  @include breakpoint('desktop', 'medium') {
+    max-width: 1440px;
+  }
 }
 
 .message {

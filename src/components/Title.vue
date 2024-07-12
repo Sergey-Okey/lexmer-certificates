@@ -52,7 +52,7 @@ span {
   }
 
   @include breakpoint ('tablet', 'wide') {
-   text-align: left;
+    text-align: left;
   }
 }
 

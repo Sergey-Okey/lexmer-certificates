@@ -42,11 +42,6 @@ import Title from "./Title.vue";
     align-items: center;
     gap: 135px;
 
-    @include breakpoint ('desktop', 'medium') {
-      width: 1440px;
-      gap: 0;
-    }
-
     @include breakpoint ('mobile') {
       width: 320px;
       flex-wrap: wrap-reverse;
@@ -64,6 +59,17 @@ import Title from "./Title.vue";
     @include breakpoint ('tablet', 'wide') {
       width: 1000px;
       flex-wrap: nowrap;
+    }
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 1440px;
+      gap: 0;
+    }
+
+    @include breakpoint ('desktop', 'wide') {
+      width: 1920px;
+      gap: 135px;
+      padding: 50px 100px;
     }
 
   }
@@ -84,13 +90,16 @@ import Title from "./Title.vue";
     }
 
     @include breakpoint ('tablet', 'medium') {
-      width: 620px
+      width: 620px;
     }
 
-        @include breakpoint ('tablet', 'wide') {
-          width: 100%;
-          max-width: 400px;
-        }
+    @include breakpoint ('tablet', 'wide') {
+      width: 400px;
+    }
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 620px;
+    }
 
     span {
       font-family: "Bebas", sans-serif;
@@ -140,6 +149,10 @@ import Title from "./Title.vue";
         margin: 15px 0;
         text-align: left;
       }
+
+      @include breakpoint ('desktop', 'medium') {
+        width: 445px;
+      }
     }
 
     button {
@@ -166,10 +179,6 @@ import Title from "./Title.vue";
   .box-card {
     width: 925px;
 
-    @include breakpoint ('desktop',
-      'medium') {
-      width: 810px;
-    }
 
     @include breakpoint ('mobile') {
       width: 293px;
@@ -181,6 +190,14 @@ import Title from "./Title.vue";
 
     @include breakpoint ('tablet', 'medium') {
       width: 555px
+    }
+
+    @include breakpoint ('desktop', 'medium') {
+      width: 810px;
+    }
+
+    @include breakpoint ('desktop', 'wide') {
+      width: 924px;
     }
 
     img {

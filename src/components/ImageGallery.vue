@@ -1,12 +1,12 @@
 <template>
   <div class="gallery-container">
-    <div class="large-image">
-      <img :src="getImageSrc(currentImage)" alt="Selected" />
-    </div>
     <div class="thumbnails">
       <div v-for="(image, index) in images" :key="index" class="thumbnail" @click="selectImage(index)">
         <img :src="getImageSrc(image)" :alt="'Image ' + index" />
       </div>
+    </div>
+    <div class="large-image">
+      <img :src="getImageSrc(currentImage)" alt="Selected" />
     </div>
   </div>
 </template>
@@ -37,24 +37,31 @@ export default {
 
 <style scoped lang="scss">
 .gallery-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
   gap: 20px;
+  width: 100%;
+  max-width: 748.92px;
 
   @include breakpoint('mobile') {
-    gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
   }
 
   @include breakpoint('tablet', 'wide') {
-    flex-direction: row-reverse;
-    align-items: center;
+    grid-template-columns: 195px auto;
+    grid-template-rows: auto;
+    max-width: 100%;
   }
+
+  @include breakpoint('desktop', 'medium') {
+    grid-template-columns: 195px auto;
+    grid-template-rows: auto;
+  }
+
 }
 
 .large-image {
   width: 100%;
-  max-width: 748.92px;
   height: auto;
   position: relative;
 
@@ -91,38 +98,45 @@ export default {
       font-size: 20px;
       letter-spacing: 15px;
     }
+
+    @include breakpoint('tablet', 'wide') {
+      width: 179.62px;
+      height: 18.66px;
+      top: 150.33px;
+      left: 149.68px;
+      gap: 0px;
+      opacity: 0px;
+    }
   }
 
   @include breakpoint('tablet', 'wide') {
-    max-width: 750px;
+    max-width: 480px;
   }
 }
 
 .thumbnails {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 14.49px;
-  width: 100%;
-  max-width: 748.92px;
 
   @include breakpoint('mobile') {
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
   @include breakpoint ('mobile', 'wide') {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: 1fr;
     gap: 6px;
-    width: 100%;
-    max-width: 748.92px;
   }
 
   @include breakpoint('tablet', 'wide') {
-    grid-template-columns: repeat(1, 4fr);
-    gap: 15px;
-    max-width: 195px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+
+  @include breakpoint('desktop', 'medium') {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
   }
 }
 
@@ -130,7 +144,7 @@ export default {
   position: relative;
   cursor: pointer;
   width: 100%;
-  height: auto;
+  height: 0;
   padding-bottom: 56.25%;
   overflow: hidden;
 

@@ -48,14 +48,9 @@ import OrderForm from "@/components/OrderForm.vue";
     gap: 50px;
     padding: 0 100px;
 
-    @include breakpoint('desktop', 'medium') {
-      max-width: 1440px;
-      padding: 0 10px;
-    }
-
     @include breakpoint('mobile') {
       max-width: 320px;
-      padding: 0 10px;
+      padding: 100px 10px;
       height: auto;
     }
 
@@ -70,6 +65,17 @@ import OrderForm from "@/components/OrderForm.vue";
     @include breakpoint ('tablet', 'wide') {
       max-width: 1000px
     }
+
+    @include breakpoint('desktop', 'medium') {
+      max-width: 1440px;
+      padding: 100px 10px;
+      gap: 45px;
+    }
+
+    @include breakpoint ('desktop', 'wide') {
+      max-width: 1920px;
+      padding:100px;
+    }
   }
 
   .order-form {
@@ -79,7 +85,6 @@ import OrderForm from "@/components/OrderForm.vue";
     flex-direction: column;
     width: 100%;
     background-color: white;
-    margin-bottom: 100px;
 
     @include breakpoint('mobile') {
       padding: 20px 25px;
@@ -93,9 +98,13 @@ import OrderForm from "@/components/OrderForm.vue";
       height: auto;
 
       @include breakpoint('mobile') {
-        flex-direction: column;
+        flex-wrap: wrap;
         width: 100%;
         gap: 30px;
+      }
+
+      @include breakpoint('desktop', 'medium') {
+        flex-wrap: nowrap;
       }
 
       .form {
@@ -106,6 +115,11 @@ import OrderForm from "@/components/OrderForm.vue";
 
         @include breakpoint('mobile') {
           width: 100%;
+        }
+
+        @include breakpoint ('desktop', 'medium') {
+          width: 575px;
+          gap: 0;
         }
       }
 

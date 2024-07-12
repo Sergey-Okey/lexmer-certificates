@@ -51,16 +51,16 @@ import Title from "./Title.vue";
     padding: 60px 10px;
   }
 
+  @include breakpoint ('desktop', 'wide') {
+    padding: 60px 100px;
+  }
+
   &_content {
     width: 1920px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
-
-    @include breakpoint('desktop', 'medium') {
-      width: 1440px;
-    }
 
     @include breakpoint('mobile') {
       width: 320px;
@@ -76,6 +76,14 @@ import Title from "./Title.vue";
 
     @include breakpoint('tablet', 'wide') {
       width: 1000px;
+    }
+
+    @include breakpoint('desktop', 'medium') {
+      width: 1440px;
+    }
+
+    @include breakpoint ('desktop', 'wide') {
+      width: 1920px;
     }
 
     .title {
@@ -104,6 +112,16 @@ import Title from "./Title.vue";
         max-width: 1000px;
       }
 
+      @include breakpoint('desktop', 'medium') {
+        max-width: 1440px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
+
+      @include breakpoint ('desktop', 'wide') {
+        max-width: 1920px;
+      }
+
       .item {
         width: 100%;
         padding: 33px 54px;
@@ -119,12 +137,20 @@ import Title from "./Title.vue";
 
         &.item-2 {
           order: 3;
+
+          @include breakpoint('desktop', 'medium') {
+            order: 2;
+          }
         }
 
         &.item-3 {
           order: 4;
 
           @include breakpoint('tablet', 'wide') {
+            order: 2;
+          }
+
+          @include breakpoint('desktop', 'medium') {
             order: 2;
           }
         }
@@ -144,6 +170,10 @@ import Title from "./Title.vue";
           padding: 50px;
         }
 
+        @include breakpoint('desktop', 'medium') {
+          padding: 33px 54px;
+        }
+
         div {
           display: flex;
           gap: 10px;
@@ -155,12 +185,16 @@ import Title from "./Title.vue";
           }
 
           @include breakpoint('mobile') {
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 0;
           }
 
-          @include breakpoint ('tablet', 'medium') {
-            flex-wrap: nowrap;
+          @include breakpoint ('desktop', 'wide') {
+            flex-direction: row;
+          }
+
+          @include breakpoint ('desktop', 'wide') {
+          width: 334px;
           }
         }
 
