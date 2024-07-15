@@ -41,30 +41,18 @@ import Title from "./Title.vue";
 .price {
   display: flex;
   background: white;
-  padding: 74px 100px;
-
-  @include breakpoint('desktop', 'medium') {
-    padding: 74px 10px;
-  }
-
-  @include breakpoint('mobile') {
-    padding: 50px 20px;
-  }
-
-  @include breakpoint ('desktop', 'wide') {
-    padding: 60px 100px;
-  }
-
   &_content {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
+    padding: 74px 100px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 
     @include breakpoint('mobile') {
       max-width: 320px;
+      padding: 50px 20px;
     }
 
     @include breakpoint('mobile', 'wide') {
@@ -81,6 +69,12 @@ import Title from "./Title.vue";
 
     @include breakpoint('desktop', 'medium') {
       max-width: 1440px;
+      padding: 74px 10px;
+    }
+
+    @include breakpoint ('desktop') {
+      padding: 60px 100px;
+      max-width: 1610px;
     }
 
     @include breakpoint ('desktop', 'wide') {
@@ -114,14 +108,12 @@ import Title from "./Title.vue";
       }
 
       @include breakpoint('desktop', 'medium') {
-        max-width: 1440px;
+        max-width: 100%;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(1, 1fr);
       }
 
-      @include breakpoint ('desktop', 'wide') {
-        max-width: 1920px;
-      }
+      @include breakpoint ('desktop') {}
 
       .item {
         width: 100%;
@@ -220,6 +212,10 @@ import Title from "./Title.vue";
 
           @include breakpoint('mobile') {
             font-size: 16px;
+          }
+
+          @include breakpoint('tablet', 'medium') {
+            font-size: 18px;
           }
         }
 

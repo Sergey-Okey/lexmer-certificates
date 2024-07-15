@@ -125,7 +125,7 @@ const toggleQuestion = (index) => {
 
       @include breakpoint ('desktop',
         'medium') {
-        max-width: 370px;
+        max-width: 390px;
       }
 
       p {
@@ -135,17 +135,21 @@ const toggleQuestion = (index) => {
         font-weight: 400;
         line-height: 20.25px;
         text-align: left;
+        margin-bottom: 45px;
 
         @include breakpoint ('mobile') {
           width: 100%;
-          padding: 10px 0;
-          margin: 0;
         }
 
         @include breakpoint ('desktop',
           'medium') {
           width: 100%;
           max-width: 400px;
+        }
+
+        @include breakpoint ('tablet',
+          'medium') {
+          max-width: 585px;
         }
 
         a {
@@ -208,6 +212,7 @@ const toggleQuestion = (index) => {
       .icon-expanded .arrow-icon {
         transform: rotate(180deg);
       }
+
     }
 
     .question-body {

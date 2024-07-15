@@ -23,15 +23,18 @@ import Title from "./Title.vue";
 
 <style scoped lang="scss">
 .offer {
+  width: 100%;
   display: flex;
   background: #edf0f2;
 
+
   &_content {
     width: 100%;
-    padding: 50px 100px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 135px;
+    padding: 50px 100px;
 
     @include breakpoint ('mobile') {
       max-width: 320px;
@@ -42,7 +45,7 @@ import Title from "./Title.vue";
 
     @include breakpoint ('mobile', 'wide') {
       max-width: 480px;
-      padding:50px 20px;
+      padding: 50px 20px;
     }
 
     @include breakpoint ('tablet', 'medium') {
@@ -62,7 +65,8 @@ import Title from "./Title.vue";
     }
 
     @include breakpoint ('desktop') {
-      max-width: 1610px;
+      max-width: 100%;
+      padding: 50px 100px;
     }
 
     @include breakpoint ('desktop', 'wide') {
@@ -178,6 +182,10 @@ import Title from "./Title.vue";
   .box-card {
     width: 100%;
     height: auto;
+
+    @include breakpoint ('desktop') {
+      max-width: 810px;
+    }
 
     img {
       width: 100%;
