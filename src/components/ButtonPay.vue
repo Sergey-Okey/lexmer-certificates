@@ -15,9 +15,17 @@ button {
   background: black;
   color: white;
   margin-top: 35px;
+  outline: solid 2px black;
   cursor: pointer;
+
   @include breakpoint('mobile') {
-      margin-top: 0;
-    }
+    width: 100%;
+    margin-top: 0;
+  }
+
+  @include breakpoint('mobile', 'wide') {
+    width: 215px;
+    height: 45px;
+  }
 }
 </style>

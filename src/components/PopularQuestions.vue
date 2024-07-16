@@ -74,44 +74,44 @@ const toggleQuestion = (index) => {
 <style lang="scss" scoped>
 .popular-questions {
   .popular-questions-container {
-    width: 1920px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding: 100px;
 
     @include breakpoint ('mobile') {
-      width: 320px;
+      max-width: 320px;
       flex-wrap: wrap;
       padding: 20px 10px;
     }
 
     @include breakpoint ('mobile', 'wide') {
-      width: 480px;
+      max-width: 480px;
     }
 
     @include breakpoint ('tablet', 'medium') {
-      width: 768px
+      max-width: 768px
     }
 
     @include breakpoint ('tablet', 'wide') {
-      width: 1000px
+      max-width: 1000px
     }
 
     @include breakpoint ('desktop',
       'medium') {
-      width: 1440px;
+      max-width: 1440px;
       flex-wrap: nowrap;
       gap: 80px;
     }
 
     @include breakpoint ('desktop') {
-      width: 1610px;
+      max-width: 1610px;
       padding: 100px;
     }
 
     @include breakpoint ('desktop', 'wide') {
-      width: 1920px;
+      max-width: 1920px;
     }
 
     .title {

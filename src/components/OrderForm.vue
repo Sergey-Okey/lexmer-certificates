@@ -82,7 +82,10 @@
         Введено символов: {{ message.length }}/1000
       </div>
     </div>
-    <ButtonPay />
+    <div class="buttons">
+      <ButtonPay />
+      <ButtonView />
+    </div>
   </div>
 </template>
 
@@ -90,6 +93,7 @@
 import { ref, onMounted } from 'vue';
 import Inputmask from 'inputmask';
 import ButtonPay from './ButtonPay.vue';
+import ButtonView from './ButtonView.vue';
 
 const amounts = [
   1000, 3000, 5000, 10000, 15000, 20000, 25000, 30000, 40000, 50000,
@@ -296,6 +300,21 @@ textarea {
   @include breakpoint('mobile') {
     font-size: 16px;
     min-height: 140px;
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  @include breakpoint('mobile') {
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint('mobile') {
+    flex-wrap: wrap;
   }
 }
 

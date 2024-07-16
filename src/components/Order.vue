@@ -132,11 +132,6 @@ import OrderForm from "@/components/OrderForm.vue";
         }
       }
 
-      .gallery {
-        display: flex;
-        flex-direction: column;
-      }
-
       .title {
         font-size: 30px;
         font-weight: 400;
