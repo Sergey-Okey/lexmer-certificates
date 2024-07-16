@@ -308,6 +308,7 @@ textarea {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-bottom: 30px;
 
   @include breakpoint('mobile') {
     flex-wrap: wrap;
