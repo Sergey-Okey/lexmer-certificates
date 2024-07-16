@@ -5,7 +5,7 @@
         <Title span1="вопросы" span2="популярные" style="flex-direction: column-reverse" />
         <p>
           Не нашли ответ на свой вопрос? Узнайте подробнее
-          <a href="">об условиях приобретения и использования</a>
+          <a href="#" @click.prevent="openModal">об условиях приобретения и использования</a>
           подарочных сертификатов LEXMER
         </p>
       </div>
@@ -29,17 +29,19 @@
         </div>
       </div>
     </div>
+    <!-- Modal -->
+    <ModalTerms v-if="isModalOpen" @close="closeModal"/>
   </div>
 </template>
+
 
 <script setup>
 import { ref } from "vue";
 import Title from "@/components/Title.vue";
-
+import ModalTerms from "@/components/ModalTerms.vue";
 const questions = ref([
   {
-    title:
-      "1. Что из себя представляет электронный подарочный сертификат LEXMER?",
+    title: "1. Что из себя представляет электронный подарочный сертификат LEXMER?",
     answer: "Ответ на вопрос 1.",
     expanded: false,
   },
@@ -50,8 +52,7 @@ const questions = ref([
   },
   {
     title: "3. На что можно потратить сертификат?",
-    answer:
-      "На любые товары, в том числе на товары со скидкой. Исключения: товары из разделов «Подарочный сертификат» ",
+    answer: "На любые товары, в том числе на товары со скидкой. Исключения: товары из разделов «Подарочный сертификат» ",
     expanded: false,
   },
   {
@@ -66,9 +67,20 @@ const questions = ref([
   },
 ]);
 
+const isModalOpen = ref(false);
+
 const toggleQuestion = (index) => {
   questions.value[index].expanded = !questions.value[index].expanded;
 };
+
+const openModal = () => {
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
+
 </script>
 
 <style lang="scss" scoped>
@@ -80,37 +92,36 @@ const toggleQuestion = (index) => {
     justify-content: space-between;
     padding: 100px;
 
-    @include breakpoint ('mobile') {
+    @include breakpoint('mobile') {
       max-width: 320px;
       flex-wrap: wrap;
       padding: 20px 10px;
     }
 
-    @include breakpoint ('mobile', 'wide') {
+    @include breakpoint('mobile', 'wide') {
       max-width: 480px;
     }
 
-    @include breakpoint ('tablet', 'medium') {
-      max-width: 768px
+    @include breakpoint('tablet', 'medium') {
+      max-width: 768px;
     }
 
-    @include breakpoint ('tablet', 'wide') {
-      max-width: 1000px
+    @include breakpoint('tablet', 'wide') {
+      max-width: 1000px;
     }
 
-    @include breakpoint ('desktop',
-      'medium') {
+    @include breakpoint('desktop', 'medium') {
       max-width: 1440px;
       flex-wrap: nowrap;
       gap: 80px;
     }
 
-    @include breakpoint ('desktop') {
+    @include breakpoint('desktop') {
       max-width: 1610px;
       padding: 100px;
     }
 
-    @include breakpoint ('desktop', 'wide') {
+    @include breakpoint('desktop', 'wide') {
       max-width: 1920px;
     }
 
@@ -118,13 +129,12 @@ const toggleQuestion = (index) => {
       display: flex;
       flex-direction: column;
 
-      @include breakpoint ('mobile') {
+      @include breakpoint('mobile') {
         width: 100%;
         text-align: left;
       }
 
-      @include breakpoint ('desktop',
-        'medium') {
+      @include breakpoint('desktop', 'medium') {
         max-width: 390px;
       }
 
@@ -137,23 +147,22 @@ const toggleQuestion = (index) => {
         text-align: left;
         margin-bottom: 45px;
 
-        @include breakpoint ('mobile') {
+        @include breakpoint('mobile') {
           width: 100%;
         }
 
-        @include breakpoint ('desktop',
-          'medium') {
+        @include breakpoint('desktop', 'medium') {
           width: 100%;
           max-width: 400px;
         }
 
-        @include breakpoint ('tablet',
-          'medium') {
+        @include breakpoint('tablet', 'medium') {
           max-width: 585px;
         }
 
         a {
           text-decoration: underline;
+          cursor: pointer;
         }
       }
     }
@@ -180,15 +189,13 @@ const toggleQuestion = (index) => {
       text-align: left;
       user-select: none;
 
-      @include breakpoint ('desktop',
-        'medium') {
+      @include breakpoint('desktop', 'medium') {
         width: 930px;
         padding: 20px;
       }
 
-      @include breakpoint ('mobile') {
+      @include breakpoint('mobile') {
         width: 100%;
-
       }
 
       .icon {
@@ -212,7 +219,6 @@ const toggleQuestion = (index) => {
       .icon-expanded .arrow-icon {
         transform: rotate(180deg);
       }
-
     }
 
     .question-body {
@@ -228,7 +234,7 @@ const toggleQuestion = (index) => {
       text-align: left;
       padding: 0 30px;
 
-      @include breakpoint ('mobile') {
+      @include breakpoint('mobile') {
         width: 100%;
         display: flex;
       }
@@ -239,5 +245,6 @@ const toggleQuestion = (index) => {
       }
     }
   }
+
 }
 </style>
