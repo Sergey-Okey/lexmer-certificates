@@ -226,7 +226,7 @@ const toggleQuestion = (index) => {
       line-height: 23.4px;
       letter-spacing: -0.01em;
       text-align: left;
-      padding-left: 30px;
+      padding: 0 30px;
 
       @include breakpoint ('mobile') {
         width: 100%;
@@ -234,7 +234,7 @@ const toggleQuestion = (index) => {
       }
 
       &.opened {
-        max-height: 800px;
+        max-height: 700px;
         margin-bottom: 20px;
       }
     }
