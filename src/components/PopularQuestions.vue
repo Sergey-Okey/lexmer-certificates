@@ -1,8 +1,10 @@
 <template>
   <div class="popular-questions">
     <div class="popular-questions-container">
-      <div class="title">
-        <Title span1="вопросы" span2="популярные" style="flex-direction: column-reverse" />
+      <div class="title-questions">
+        <div>
+          <span class="gray">популярныe </span>вопросы
+        </div>
         <p>
           Не нашли ответ на свой вопрос? Узнайте подробнее
           <a href="#" @click.prevent="openModal">об условиях приобретения и использования</a>
@@ -24,13 +26,13 @@
             </span>
           </div>
           <div class="question-body" :class="{ opened: question.expanded }">
-            {{ question.answer }}
+            <p>{{ question.answer }}</p>
           </div>
         </div>
       </div>
     </div>
     <!-- Modal -->
-    <ModalTerms v-if="isModalOpen" @close="closeModal"/>
+    <ModalTerms v-if="isModalOpen" @close="closeModal" />
   </div>
 </template>
 
@@ -125,9 +127,47 @@ const closeModal = () => {
       max-width: 1920px;
     }
 
-    .title {
+    .title-questions {
       display: flex;
       flex-direction: column;
+      font-family: "Bebas", sans-serif;
+      font-size: 85px;
+      font-weight: 400;
+      line-height: 76.5px;
+      letter-spacing: -0.005em;
+      text-align: left;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include breakpoint('mobile', 'medium') {
+          flex-direction: row;
+          font-size: 48px;
+          font-weight: 400;
+          line-height: 43.2px;
+          letter-spacing: -0.01em;
+          text-align: left;
+        }
+
+        @include breakpoint('tablet', 'medium') {
+          font-size: 85px;
+          font-weight: 400;
+          line-height: 76.5px;
+          letter-spacing: -0.005em;
+          text-align: left;
+        }
+
+        @include breakpoint('desktop', 'medium') {
+          flex-direction: column;
+          gap: 0;
+        }
+      }
+
+      .gray {
+        color: #BCC0C5;
+      }
 
       @include breakpoint('mobile') {
         width: 100%;
@@ -139,13 +179,12 @@ const closeModal = () => {
       }
 
       p {
-        margin-top: 20px;
-        width: 400px;
+        font-family: Golos;
         font-size: 15px;
         font-weight: 400;
         line-height: 20.25px;
         text-align: left;
-        margin-bottom: 45px;
+        margin: 20px 0 45px;
 
         @include breakpoint('mobile') {
           width: 100%;
@@ -158,6 +197,10 @@ const closeModal = () => {
 
         @include breakpoint('tablet', 'medium') {
           max-width: 585px;
+        }
+
+        @include breakpoint('desktop', 'medium') {
+          max-width: 385px;
         }
 
         a {
@@ -239,12 +282,17 @@ const closeModal = () => {
         display: flex;
       }
 
+      @include breakpoint('tablet', 'medium') {
+        p {
+          max-width: 585px;
+        }
+      }
+
       &.opened {
         max-height: 700px;
         margin-bottom: 20px;
       }
     }
   }
-
 }
 </style>

@@ -18,6 +18,12 @@ button {
 	outline: solid 2px black;
 	cursor: pointer;
 
+	&:hover {
+		background-color: black;
+		color: white;
+		transition: .3s ease-in;
+	}
+
 	@include breakpoint('mobile') {
 		margin-top: 0;
 		width: 100%;

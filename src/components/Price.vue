@@ -41,6 +41,7 @@ import Title from "./Title.vue";
 .price {
   display: flex;
   background: white;
+
   &_content {
     width: 100%;
     max-width: 1920px;
@@ -123,41 +124,6 @@ import Title from "./Title.vue";
         flex-direction: column;
         gap: 27px;
 
-        &.item-1 {
-          order: 1;
-
-          @include breakpoint ('mobile') {
-            order: 2;
-          }
-        }
-
-        &.item-2 {
-          order: 3;
-
-          @include breakpoint('desktop', 'medium') {
-            order: 2;
-          }
-        }
-
-        &.item-3 {
-          order: 4;
-
-          @include breakpoint('tablet', 'wide') {
-            order: 2;
-          }
-
-          @include breakpoint('desktop', 'medium') {
-            order: 2;
-          }
-        }
-
-        &.item-4 {
-          order: 2;
-
-          @include breakpoint ('mobile') {
-            order: 4;
-          }
-        }
 
         @include breakpoint('mobile') {
           padding: 30px;
@@ -242,6 +208,18 @@ import Title from "./Title.vue";
 
         }
 
+      }
+
+      .item-4 {
+        @include breakpoint('tablet', 'medium') {
+          order: 4;
+        }
+      }
+
+      .item-2 {
+        @include breakpoint('tablet', 'medium') {
+          order: 3;
+        }
       }
     }
   }
