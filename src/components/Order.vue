@@ -14,7 +14,7 @@
           </div>
           <div class="form">
             <span class="title">
-              <data value="2" style="color: grey">1.</data> Укажите
+              <data value="2" style="color: grey">2.</data> Укажите
               номинал</span>
             <OrderForm />
           </div>
@@ -55,7 +55,7 @@ import OrderForm from "@/components/OrderForm.vue";
     }
 
     @include breakpoint ('mobile') {
-     padding: 50px 10px;
+      padding: 50px 10px;
     }
 
     @include breakpoint ('mobile', 'wide') {
@@ -114,6 +114,10 @@ import OrderForm from "@/components/OrderForm.vue";
 
       @include breakpoint('desktop', 'medium') {
         flex-wrap: nowrap;
+      }
+
+      @include breakpoint('desktop', 'wide') {
+        gap: 100px;
       }
 
       .form {
