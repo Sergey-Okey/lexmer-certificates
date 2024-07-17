@@ -163,6 +163,16 @@ const closeModal = () => {
           flex-direction: column;
           gap: 0;
         }
+
+        @include breakpoint('mobile') {
+          flex-direction: column;
+          gap: 0;
+          font-size: 48px;
+          font-weight: 400;
+          line-height: 43.2px;
+          letter-spacing: -0.01em;
+          text-align: left;
+        }
       }
 
       .gray {
@@ -239,6 +249,7 @@ const closeModal = () => {
 
       @include breakpoint('mobile') {
         width: 100%;
+        font-size: 23px;
       }
 
       .icon {
