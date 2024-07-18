@@ -105,7 +105,7 @@ const close = () => {
 		top: 20px;
 		right: 20px;
 		cursor: pointer;
-		font-size: 24px;
+		font-size: 34px;
 	}
 }
 </style>
