@@ -117,6 +117,7 @@ import Title from "./Title.vue";
       @include breakpoint ('desktop') {}
 
       .item {
+        position: relative;
         width: 100%;
         padding: 33px 54px;
         outline: solid 1px #bababa;
@@ -206,6 +207,21 @@ import Title from "./Title.vue";
           gap: 0px;
           opacity: 0px;
 
+          @include breakpoint('mobile') {
+            position: absolute;
+            right: 35px;
+            top: 50%;
+          }
+
+          @include breakpoint('mobile', 'wide') {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+          }
+
+          @include breakpoint('tablet', 'medium') {
+            position: static;
+          }
         }
 
       }
@@ -219,6 +235,24 @@ import Title from "./Title.vue";
       .item-2 {
         @include breakpoint('tablet', 'medium') {
           order: 3;
+        }
+      }
+
+      .item-1 {
+        @include breakpoint('desktop', 'medium') {
+          order: 1;
+        }
+      }
+
+      .item-2 {
+        @include breakpoint('desktop', 'medium') {
+          order: 2;
+        }
+      }
+
+      .item-3 {
+        @include breakpoint('desktop', 'medium') {
+          order: 2;
         }
       }
     }

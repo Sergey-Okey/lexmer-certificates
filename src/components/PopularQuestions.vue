@@ -97,7 +97,7 @@ const closeModal = () => {
     @include breakpoint('mobile') {
       max-width: 320px;
       flex-wrap: wrap;
-      padding: 20px 10px;
+      padding: 60px 20px;
     }
 
     @include breakpoint('mobile', 'wide') {
@@ -142,6 +142,16 @@ const closeModal = () => {
         flex-direction: column;
         gap: 10px;
 
+        @include breakpoint('mobile') {
+          flex-direction: column;
+          gap: 0;
+          font-size: 48px;
+          font-weight: 400;
+          line-height: 43.2px;
+          letter-spacing: -0.01em;
+          text-align: left;
+        }
+
         @include breakpoint('mobile', 'medium') {
           flex-direction: row;
           font-size: 48px;
@@ -164,15 +174,7 @@ const closeModal = () => {
           gap: 0;
         }
 
-        @include breakpoint('mobile') {
-          flex-direction: column;
-          gap: 0;
-          font-size: 48px;
-          font-weight: 400;
-          line-height: 43.2px;
-          letter-spacing: -0.01em;
-          text-align: left;
-        }
+
       }
 
       .gray {
@@ -229,7 +231,7 @@ const closeModal = () => {
     border: solid 1px #EBEBEB;
 
     .question-header {
-      width: 1020px;
+      width: 100%;
       height: auto;
       display: flex;
       justify-content: space-between;
@@ -241,10 +243,14 @@ const closeModal = () => {
       line-height: 23.1px;
       text-align: left;
       user-select: none;
+      gap: 20px;
 
       @include breakpoint('desktop', 'medium') {
-        width: 930px;
         padding: 20px;
+      }
+
+      @include breakpoint('desktop','wide') {
+        min-width: 1150px;
       }
 
       @include breakpoint('mobile') {
